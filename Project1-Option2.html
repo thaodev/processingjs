@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BMI calculation</title>
+    
 </head>
+
 <body>
+    <h1>Thước đo BMI</h1>
+
+    <p>Cân nặng của Toàn là <input type="number" id="weight1" placeholder ="kg"></p><br>
+    <p>Chiều cao của Toàn là <input type="number" id="height1" placeholder ="m"></p> <br>
+    <h2 id="BMI1"></h2>
+    <p>Cân nặng của Minh là <input type="number" id="weight2" placeholder ="kg"></p> <br>
+    <p>Chiều cao của Minh là <input type="number" id="height2" placeholder ="m"></p> <br>
+    <h2 id="BMI2"></h2>
+    
+    <button onclick="computeBMI()">So sánh BMI của 2 bạn </button>
+    <h2 id="res"></h2>
     <script src="project1.js"></script>
 </body>
+
 </html>

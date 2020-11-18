@@ -11,7 +11,7 @@ function computeBMI() {
     var result;
 
     //Display BMI of each person
-    document.getElementById("BMI1").innerHTML = "BMI của Toàn là " + BMI1;
+    document.getElementById("BMI1").innerHTML = "BMI của Toàn là " + BMI1;//the innerHTML property sets or returns the HTML content (inner HTML) of an element
     document.getElementById("BMI2").innerHTML = "BMI của Minh là " + BMI2;
 
     //Display BMI of each person on console

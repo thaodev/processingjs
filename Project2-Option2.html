@@ -1,14 +1,30 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h3 style ="text-align: center;">Tính Toán</h3>
-    <form action="/action_page.php" id="calc">
-        <input type="text" id="No1" placeholder ="Giá trị số 1" name="fname"><br><br>
-        <input type="submit" value="Submit">
-      </form>
+    <div style="text-align: center;">
+        <h3>Tính Toán</h3>
+        <form action="/action_page.php" id="calc">
+            <input type="number" id="No1" placeholder="Giá trị số 1">
+            <input type="number" id="No2" placeholder="Giá trị số 2"><br></br>
+        </form>
+
+        <button onclick="plusFuction()">+</button>
+        <button onclick="minuFunction()">-</button>
+        <button onclick="mulpFunction()">x</button>
+        <button onclick="diviFunction()">/</button>
+
+        <input type="number" id="result">
+        <script src="project2.js"></script>
+
+        
+    </div>
+
 </body>
+
 </html>

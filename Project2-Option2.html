@@ -9,20 +9,20 @@
 <body>
     <div style="text-align: center;">
         <h3>Tính Toán</h3>
-        <form action="/action_page.php" id="calc">
-            <input type="number" id="No1" placeholder="Giá trị số 1">
-            <input type="number" id="No2" placeholder="Giá trị số 2"><br></br>
-        </form>
-
-        <button onclick="plusFuction()">+</button>
-        <button onclick="minuFunction()">-</button>
-        <button onclick="mulpFunction()">x</button>
-        <button onclick="diviFunction()">/</button>
-
-        <input type="number" id="result">
-        <script src="project2.js"></script>
-
+    
+        <input type="text" id="No1" required/>
+        <input type="text" id="No2" required/><br></br>
         
+        <button type="submit" onClick="addFunction()">+</button>
+        <button type="submit" onClick="minFunction()">-</button>
+        <!-- <button type="submit" onClick="mulFunction()">x</button>
+        <button type="submit" onClick="divFunction()">:</button><br></br> -->
+
+        <p id="result"></p>
+    
+        <script src="project2.js"></script>
+        
+    
     </div>
 
 </body>

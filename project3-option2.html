@@ -5,39 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        body {
-            text-align: center;
-        }
-
-        .name {
-            display: grid;
-            grid-template-columns: auto auto;
-
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
 
-    <h1>Form đăng ký</h1>
-    <form>
-        <div class="name">
-            <div>
-                <label for="lastname">Họ</label><br>
-                <input type="text" id="lastname" name="Nhập họ">
-            </div>
+        <h1>Form đăng ký</h1>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="lastname">Họ</label>
+                    <input type="text" id="lastname" placeholder="Nhập họ">
+                </div>
+                <div class="col">
+                    <label for="firstname">Tên</label>
+                    <input type="text" id="firstname" placeholder="Nhập tên">
 
-            <div>
-                <label for="firstname">Tên</label><br>
-                <input type="text" id="firstname" name="Nhập tên">
+                </div>
+
             </div>
-        </div>
-    </form>
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Nhập email">
+                </div>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Croc Clicker</title>
+    </head>
+    <body>
+    
+    <h1>Challenge: Croc Clicker</h1>
+    <img id="crocs" src="https://www.kasandbox.org/programming-images/animals/crocodiles.png" width="300" alt="Crocodiles chilling">
+    <div id="results"></div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var numClicks = function() {
+        
+        $("#results").text("You clicked " + numClicks + " times");
+    };
+    $("#results).on("click", function() {
+        console.log("you clicked");
+        numClicks();
+        });
+    
+    </script>
+    
+
+    </body>
+</html>

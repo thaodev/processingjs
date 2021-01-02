@@ -11,13 +11,13 @@
     <div id="results"></div>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-        var numClicks = function() {
-        
+        var numClicks = 0 ;
         $("#results").text("You clicked " + numClicks + " times");
-    };
-    $("#results).on("click", function() {
+    
+    $("#crocs").on("click", function() {
         console.log("you clicked");
-        numClicks();
+        numClicks += 1 ;
+        $("#results").text("You clicked " + numClicks + " times");
         });
     
     </script>

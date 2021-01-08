@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Interactive slideshow</title>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <div class="container-text">
+            <h2>Interactive Slideshow</h2>
+        </div>
+        <div class="image">
+            <br>
+            <button type="button" id="prev">Previous</button>
+            <img id="first-slide" src="https://www.kasandbox.org/programming-images/food/mushroom.png" width="400"
+                alt="Mushrooms" style="display-inline;">
+            <button type="button" id="next">Next</button>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var images = ["https://www.kasandbox.org/programming-images/food/mushroom.png",
+        "https://www.kasandbox.org/programming-images/food/strawberries.png",
+        "https://www.kasandbox.org/programming-images/food/tomatoes.png",
+        "https://www.kasandbox.org/programming-images/food/chocolates.png",]
+    var slide = 0;
+    var initialSlide = function() {
+        $("div .image #first-slide").hide();
+        $("div .image #first-slide").fadeIn(1200);
+        }
+
+    var nextButton = function() {
+        if (slide != (images.length - 1)) {
+            $("img").hide()
+            $("img").attr("src", images[slide + 1])
+            $("img").fadeIn(1200)
+            slide++;
+        }
+    };
+
+    var prevButton = function() {
+        if (slide != 0) {
+        $("img").hide()
+        $("img").attr("src", images[slide - 1])
+        $("img").fadeIn(1200)
+        slide--;
+    }
+};
+
+    $("div #next").on("click", function() {
+        nextButton();
+    });
+
+    $("div #prev").on("click", function() {
+        prevButton();
+    });
+
+    </script>
+</body>
+
+</html>

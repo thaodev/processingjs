@@ -1,0 +1,12 @@
+	- All the links
+	$("a");
+	- Show up number of links: $("a").length;
+	- This article
+	$("p");
+	- Every image
+	$("img");
+	- The sidebar navigation
+	$("nav");
+	- Show h1 tag
+	$("h1").text();
+	

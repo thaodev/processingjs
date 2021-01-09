@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow using JS</title>
+    <style>
+        .image {
+            text-align: center;
+        }
+
+        .button {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- image area -->
+    <div class="image">
+        <img id="img-area" src="img1.png" alt="">
+        <!-- <img src="img2.png" alt="">
+        <img src="img3.png" alt="">
+        <img src="img4.png" alt=""> -->
+    </div>
+    <!-- button area -->
+    <div class="button">
+        <button onClick="one()">1</button>
+        <button onClick="two()">2</button>
+        <button onClick="three()">3</button>
+        <button onClick="four()">4</button>
+    </div>
+    <script src="img2.jpg"></script>
+
+    <script>
+        var img = document.getElementById("img-area");
+        function one() {
+            img.src="img1.png";
+            // alert("work");
+        }
+        function two() {
+            img.src="img2.jpg";
+            // alert("work");
+        }
+        function three() {
+            img.src="img3.png";
+            // alert("work");
+        }
+        function four() {
+            img.src="img4.jpg";
+            // alert("work");
+        }
+    </script>
+</body>
+
+</html>

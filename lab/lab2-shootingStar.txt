@@ -1,0 +1,49 @@
+var xPos = 50;
+var yPos = 50;
+var xPos1 = 300;
+var yPos1 = 50;
+var xPos2 = 100;
+var yPos2 = 20;
+
+draw = function() {
+    background(29, 40, 115);
+    //1st building
+    fill(153,144,144);
+    rect(0,150,90,250);
+    fill(255, 238, 0);//window color
+    rect(30,180,30,30);//1st window
+    rect(30,240,30,30);//2nd window
+    rect(30,300,30,30);//3rd window
+    rect(30,350,30,50);
+    
+    //2nd buidling
+    fill(153, 144, 12);
+    triangle(100,100,140,70,180,100);//roof
+    fill(24, 166, 201);
+    rect(100, 100, 80, 300);
+    fill(255, 238, 0);//window color
+    rect(130,150,20,40);//1st window
+    rect(130,210,20,40);//2nd window
+    rect(130,270,20,40);//3rd window
+    rect(130,350,30,50);///main door
+    
+    
+    fill(255, 242, 0);
+    //shooting star 1
+    ellipse(xPos, yPos, 10, 10);
+    xPos += 5;
+    yPos += 5;
+    //shooting star 2
+    ellipse(xPos1, yPos1, 15,15);
+    xPos1 += -5;
+    yPos1 += 5;
+    //shooting star 3
+    
+    rect(xPos2, yPos2, 15, 12);
+    xPos2 += 4 ;
+    yPos2 += 9;
+    
+};
+
+
+

@@ -1,0 +1,48 @@
+var bodyX = 100;
+var bodyY = 220;
+var bodyW = 180;
+var faceW = bodyW/2;
+
+draw = function() {
+    background(207, 254, 255);
+    //peak
+    fill(230, 212, 14);
+    rect(bodyX+20,bodyY-70,faceW/3,faceW/10);
+    //tale
+    ellipse(bodyX - 70, bodyY+20, faceW/1.5,faceW/3);
+    
+    fill(237, 223, 151);
+    ellipse(bodyX, bodyY, bodyW, 106); // body?
+    ellipse(bodyX, bodyY-70, faceW, 47); // face?
+    
+    //eyes
+    fill(46, 15, 15);
+    ellipse(bodyX+5, bodyY-75,faceW/6, faceW/10);
+    
+    //wing
+    fill(237, 223, 151);
+    arc(bodyX-10,bodyY, faceW,faceW/2,1,130);
+    
+    //front leg
+    line(bodyX-5, bodyY+52, bodyX-5, bodyY+70);
+    line(bodyX-5, bodyY+70, bodyX-17, bodyY+80);
+    line(bodyX-5, bodyY+70, bodyX-5, bodyY+80);
+    line(bodyX-5, bodyY+70, bodyX+5, bodyY+80);
+    fill(230, 212, 14);
+    arc(bodyX-5, bodyY+73, faceW/2, faceW/6,faceW*5/6,faceW*13/6);
+    
+    //back leg
+    line(bodyX, bodyY+52, bodyX, bodyY+70);
+    line(bodyX, bodyY+70, bodyX-12, bodyY+80);
+    line(bodyX, bodyY+70, bodyX, bodyY+80);
+    line(bodyX, bodyY+70, bodyX+10, bodyY+80);
+    fill(230, 212, 14);
+    arc(bodyX, bodyY+78, faceW/2, faceW/6,faceW,faceW);
+    
+    //water
+    fill(0, 0, 255);
+    rect(0, bodyY+40,400,200);
+    
+    bodyX += 2;
+    
+};

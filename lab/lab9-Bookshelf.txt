@@ -1,0 +1,23 @@
+var book = [
+    {title: "I Know Why the Caged Bird Sings", author:"Maya Angelou", stars: 4},
+    {title: "The Giver", author:"Lois Lowry", stars: 5},
+    {title: "The Hunger Game", author:"Suzanne Collins", stars: 4},
+];
+
+// draw shelf
+fill(173, 117, 33);
+rect(0, 120, width, 10);
+
+for (var i = 0; i < book.length; i ++) {
+    fill(214, 255, 219);
+    rect(10 + i*100, 20, 90, 100);
+    fill(0, 0, 0);
+    text(book[i].title, 15+i*100, 29, 70, 100);
+    textSize(10);
+    fill(255, 0, 0);
+    text(book[i].author, 15+i*100, 69, 70, 100);
+    
+    for (var s = 0; s < book[i].stars; s++) {
+    image(getImage("cute/Star"), 10 + s * 20 + i*100, 90, 10, 30);
+    }
+}

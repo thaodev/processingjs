@@ -1,0 +1,58 @@
+
+var X = 50;
+var Y = X*4;
+
+draw = function() {
+background(218, 219, 199);
+fill(11, 120, 44);
+textSize(30);
+text("NATUAL NUTS MILK",10, 30);
+
+fill(107, 103, 33);
+textSize(25);
+text("No preservatives", 15, 60);
+text("No added sugars", 15, 90);
+
+fill(150, 161, 127);
+textSize(20);
+text("(drinkable at any ages greater than 3 yo)", 15, 120);
+
+//1st cup
+fill(255,255,255);
+line(X,Y,X+2,Y+70);
+line(X+2,Y+70,X+40,Y+70);
+line(X+40,Y+70,X+42,Y);
+ellipse((X+(X+42))/2, Y,42,10);
+
+//plus size
+fill(227, 157, 157);
+rect(X+70,Y+30,5,20);//vertial
+rect(2*X+12,Y+36,20,5);//horizontal
+
+var drawNuts = function(nutX, nutY) {
+//nuts
+fill(166, 148, 43);
+ellipse(nutX,nutY,10,7);
+};
+drawNuts(X*3+10,Y+50);
+drawNuts(X*3+25,Y+50);
+drawNuts(X*3,Y+30);
+drawNuts(X*3+15, Y+40);
+drawNuts(X*3+25, Y+30);
+
+//equal sign
+fill(40, 31, 219);
+rect(X*3+45, Y+30, 20, 5);
+rect(X*3+45, Y+40, 20, 5);
+
+//2nd cup
+fill(X*4+30, Y+37, 194);
+line(X*5,Y,X*5+2,Y+70);
+line(X*5+2,Y+70,X*5+40,Y+70);
+line(X*5+40,Y+70,X*5+42,Y);
+ellipse(X*5+21, Y,42,10);
+
+X += -1 ;
+     
+};
+

@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slideshow using JS</title>
+    <style>
+        .image {
+            text-align: center;
+        }
+
+        .button {
+            text-align: center;
+            border:none;
+            padding: 20px;
+            text-decoration: none;
+            }
+        .button1, .button2, .button3, .button4 {
+            border-radius: 50%;
+            background-color: palevioletred;
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- image area -->
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-
-    <!-- button area -->
-    <div class="button-area">
-        <button onClick="one()">1</button>
-        <button onClick="two()">2</button>
-        <button onClick="three()">3</button>
-        <button onClick="four()">4</button>
+    <div class="image">
+        <img id="img-area" src="https://www.kasandbox.org/programming-images/food/mushroom.png" alt="">
     </div>
-    <button id="one">1</button>
+    <!-- button area -->
+    <div class="button">
+        <button type="button" onClick="prev()">Previous</button>
+        <button class="button1" onClick="one()">1</button>
+        <button class="button2" onClick="two()">2</button>
+        <button class="button3" onClick="three()">3</button>
+        <button class="button4" onClick="four()">4</button>
+        <button type="button" onClick="next()">Next</button>
+    </div>
+
     <script>
-        var button = document.getElementById("button");
-        button.innerHTML = <img src=""/>;
+        var images = ["https://www.kasandbox.org/programming-images/food/mushroom.png",
+        "https://www.kasandbox.org/programming-images/food/tomatoes.png",
+        "https://www.kasandbox.org/programming-images/food/strawberries.png",
+        "https://www.kasandbox.org/programming-images/food/chocolates.png",];
+        var slide = 0;
+        function next() {
+            if (slide != (images.length -1)) {
+                img.src = images[slide+1];
+                slide++;
+                // alert("work");
+            }
+        }
+        function prev() {
+            if (slide != 0) {
+                img.src = images[slide - 1];
+                slide--;
+                // alert("work");
+            }
+        }
+        var img = document.getElementById("img-area");
+        function one() {
+            img.src="https://www.kasandbox.org/programming-images/food/mushroom.png";
+            // alert("work");
+        }
+        function two() {
+            img.src="https://www.kasandbox.org/programming-images/food/tomatoes.png";
+            // alert("work");
+        }
+        function three() {
+            img.src="https://www.kasandbox.org/programming-images/food/strawberries.png";
+            // alert("work");
+        }
+        function four() {
+            img.src="https://www.kasandbox.org/programming-images/food/chocolates.png";
+            // alert("work");
+        }
     </script>
 </body>
+
 </html>

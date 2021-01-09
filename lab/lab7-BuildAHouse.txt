@@ -1,0 +1,44 @@
+background(219, 255, 255);
+
+//roof
+fill(174, 180, 214);
+triangle(200, 28, 350, 150, 50, 150);
+
+//house
+fill(255, 255, 255);
+rect(60, 150, 280, 207);
+
+//bricks
+for (var x = 60; x < 340; x += 20) {
+    for (var y = 150; y < 350; y += 10) {
+        fill(99, 17, 17);
+        rect(x, y, 20, 10);
+    }
+}
+
+//door
+fill(120, 80, 19);
+rect(180, 280, 40, 77);
+
+//windows and horizontal lines at windows
+for (var hori = 80; hori < 300; hori += 50) {
+    fill(214, 185, 43);
+    rect(hori, 200, 40, 40);
+    line(hori, 220, hori + 40, 220);
+}
+
+//vertical lines at windows
+for (var vert = 100; vert < 350; vert += 50) {
+    line(vert, 200, vert, 240);
+}
+
+//grass
+var grass  = getImage("cute/GrassBlock");
+var bush = getImage("cute/TreeShort");
+for(var i = 0; i < 400; i += 40) {
+    image(grass, i, 300);
+    if( (i/40)%2 === 0) {
+        image(bush, i, 360, 50, 40);
+    }
+}
+

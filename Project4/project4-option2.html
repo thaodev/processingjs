@@ -40,6 +40,7 @@
     </div>
 
     <script>
+        // For next and previous buttons
         var images = ["https://www.kasandbox.org/programming-images/food/mushroom.png",
         "https://www.kasandbox.org/programming-images/food/tomatoes.png",
         "https://www.kasandbox.org/programming-images/food/strawberries.png",
@@ -59,12 +60,15 @@
                 // alert("work");
             }
         }
+        // For number buttons
         var img = document.getElementById("img-area");
         function one() {
+            document.getElementsByClassName("button button1").style.backgroundColor = "#FFFFFF";
             img.src="https://www.kasandbox.org/programming-images/food/mushroom.png";
             // alert("work");
         }
         function two() {
+            document.getElementsByClassName("button button2").style.backgroundColor = "#FFFFFF";
             img.src="https://www.kasandbox.org/programming-images/food/tomatoes.png";
             // alert("work");
         }

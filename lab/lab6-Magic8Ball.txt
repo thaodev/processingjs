@@ -1,0 +1,26 @@
+fill(0, 0, 0);
+ellipse(200, 200, 375, 375);
+fill(60, 0, 255);
+triangle(200, 104, 280, 280, 120, 280);
+fill(255, 255, 255);
+var answer = floor(random(1, 5));
+println(answer);
+if (answer === 0) {
+    text("YOUR", 176, 200);
+    text("MESSAGE", 159, 229); 
+}
+
+else if (answer === 1) {
+    fill(255, 0, 0);
+    text("It is", 176, 200);
+    text("certain", 159, 229);
+}
+else if (answer === 2) {
+    text("Stop", 186, 200);
+    text("Your thought", 162, 230);
+}
+
+else {
+    text("You r",186, 200);
+    text("wasting time", 162, 230);
+}

@@ -1,0 +1,50 @@
+background(89, 216, 255);
+var centerX = 200;
+var centerY = 100;
+var bodyLength = 118;
+var bodyHeight = 74;
+var bodyColor = color(162, 0, 255);
+var drawFish = function (centerX, centerY, bodyLength, bodyHeight, bodyColor, eyeColor) {
+
+
+noStroke();
+fill(bodyColor);
+// body
+ellipse(centerX, centerY, bodyLength, bodyHeight);
+// tail
+var tailWidth = bodyLength/4;
+var tailHeight = bodyHeight/2;
+triangle(centerX-bodyLength/2, centerY,
+         centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+         centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+// eye
+fill(eyeColor);
+ellipse(centerX+bodyLength/4, centerY, bodyHeight/5, bodyHeight/5);
+};
+//generate random colour
+var randomColour = function () {
+    return color(random(0, 255), random(0,255), random(0,255));
+};
+
+//draw Seaweed
+var drawSeaweed = function(SeaweedX, SeaweedY, width, height, color) {
+    noStroke();
+    fill(color);
+    rect(SeaweedX, SeaweedY, width, height);
+};
+
+drawFish(200, 100,50,20,color(219, 94, 219), color(43, 6, 6));
+drawFish(100,200, 70, 15, color(214, 108, 47), color(20, 6, 6));
+drawFish(100, 250, 60, 50, color(115, 90, 115), color(255, 0, 0));
+
+drawSeaweed(20, 400, 12, 100, color(10, 71, 25));
+
+//random generated fish
+var mouseClicked = function() {
+    if(mouseY<350) {
+        drawFish(mouseX, mouseY, random(100,250), random(30,100), randomColour(), randomColour());}
+    else {
+        drawSeaweed(mouseX, mouseY, randomColour());
+    }
+};
+         

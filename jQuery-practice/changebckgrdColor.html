@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        p {
+            background: blue;
+            color: white;
+        }
+
+        .dbl {
+            background: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <p>Double Click here to change the background color</p>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script> -->
+    <p>You are so on fired</p>
+
+    <script>
+    var pdbl = $("p:first");//First here is for first paragraph if there is more than one paragraph
+    pdbl.dblclick(function() {
+        pdbl.toggleClass("dbl");
+    });
+
+    //This is fail when we add :first but still work when remove it
+    // $("p:first").dblclick(function() {
+    //     $(this).toggleClass("dbl") 
+    //       })
+</script>
+</body>
+</html>

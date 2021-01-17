@@ -24,6 +24,9 @@
             background-color: #32a852;
             margin-left: 50%;
         }
+        .star {
+            color: red;
+        }
     </style>
 </head>
 
@@ -35,31 +38,31 @@
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="lastname">Họ *</label>
+                    <label for="lastname">Họ <span class="star">*</span></label>
                     <input type="text" class="form-control" id="lastname" placeholder="Nhập họ" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="firstname">Tên *</label>
+                    <label for="firstname">Tên <span class="star">*</span></label>
                     <input type="text" class="form-control" id="firstname" placeholder="Nhập tên" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email <span class="star">*</span></label>
                 <input type="text" class="form-control" id="email" placeholder="Nhập email" required>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="pw">Mật khẩu (6-30 ký tự) *</label>
+                    <label for="pw">Mật khẩu (6-30 ký tự) <span class="star">*</span></label>
                     <input type="password" class="form-control" id="pw" placeholder="Mật khẩu" minlength="6" maxlength="30" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="repeatpw">Nhập lại mật khẩu *</label>
+                    <label for="repeatpw">Nhập lại mật khẩu <span class="star">*</span></label>
                     <input type="password" class="form-control" id="repeatpw" placeholder="Xác nhận mật khẩu" minlength="6" maxlength="30" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-6">
-                    <label for="yearborn">Năm sinh *</label>
+                    <label for="yearborn">Năm sinh <span class="star">*</span></label>
                     <select id="yearborn"  required>
                         <option value="0">-chọn-</option>
                         <option value="1">1990</option>
@@ -89,7 +92,7 @@
             </div>
             <div class="form-row mt-3">
                 <div class="col-md-6">
-                    <label for="city" >Thành phố *</label>
+                    <label for="city" >Thành phố <span class="star">*</span></label>
                     <select id="city" required>
                         <option value="0">-chọn-</option>
                         <option value="1">Hà Nội</option>
@@ -108,71 +111,73 @@
     </div>
     <script>
             var register = document.getElementById("myButton");
+
             var onButtonClick = function() {
-            var lastname = document.getElementById("lastname").value;
-            var name = /^[a-zA-Z]{2,30}$/;
-            var firstname = document.getElementById("firstname").value;
-            var email = document.getElementById("email").value;
-            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            var pw = document.getElementById("pw").value;
-            var pass = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]{6,30}$/;
-            var repeatpw = document.getElementById("repeatpw").value;
-            var yearborn = document.getElementById("yearborn");
-            var year = yearborn.options[yearborn.selectedIndex].value;
-            var c = document.getElementById("city");
-            var city = c.options[c.selectedIndex].value;
-            if (lastname == "") {
-                alert("Chưa nhập Họ");
-                /*return false;//the form won't be submitted*/
-            }
-            // else if ((lastname.length < 2) || (lastname.length>30)) {
-            //     alert("chuỗi từ 2 - 30 ký tự");
-            // }
-            else if (!lastname.match(name) ){
-                 alert("chuỗi từ 2 - 30 ký tự");
-            }
-            else if (firstname == "") {
-                alert("Chưa nhập tên");
-                // return false;
-            }
-            else if (!firstname.match(name)) {
-                alert("chuỗi từ 2 - 30 ký tự");
-            }
-            else if (email == "") {
-                alert("Chưa nhập email");
-                // return false;
-            }
-            else if (!email.match(mailformat)) {
-                alert("email không đúng định dạng");
-            }
-            else if (pw == "") {
-                alert("Chưa nhập mật khẩu");
-                // return false;
-            }
-            else if (!pw.match(pass)) {
-                alert("chuỗi từ 6 - 30 ký tự");
-            }
-            else if (repeatpw == "") {
-                alert("Chưa nhập lại mật khẩu");
-                // return false;
-            }
+                var lastname = document.getElementById("lastname").value;
+                var name = /^[a-zA-Z]{2,30}$/;
+                var firstname = document.getElementById("firstname").value;
+                var email = document.getElementById("email").value;
+                var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                var pw = document.getElementById("pw").value;
+                var pass = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]{6,30}$/;
+                var repeatpw = document.getElementById("repeatpw").value;
+                var yearborn = document.getElementById("yearborn");
+                var year = yearborn.options[yearborn.selectedIndex].value;
+                var c = document.getElementById("city");
+                var city = c.options[c.selectedIndex].value;
+                //Check lastname requirement
+                if (lastname.trim() == "") {
+                    alert("Chưa nhập Họ");
+                    /*return false;//the form won't be submitted*/
+                }
+                // else if ((lastname.length < 2) || (lastname.length>30)) {
+                //     alert("chuỗi từ 2 - 30 ký tự");
+                // }
+                else if (!lastname.trim().match(name) ){
+                    alert("chuỗi từ 2 - 30 ký tự");
+                }
+                else if (firstname.trim() == "") {
+                    alert("Chưa nhập tên");
+                    // return false;
+                }
+                else if (!firstname.trim().match(name)) {
+                    alert("chuỗi từ 2 - 30 ký tự");
+                }
+                else if (email == "") {
+                    alert("Chưa nhập email");
+                    // return false;
+                }
+                else if (!email.match(mailformat)) {
+                    alert("email không đúng định dạng");
+                }
+                else if (pw == "") {
+                    alert("Chưa nhập mật khẩu");
+                    // return false;
+                }
+                else if (!pw.match(pass)) {
+                    alert("chuỗi từ 6 - 30 ký tự");
+                }
+                else if (repeatpw == "") {
+                    alert("Chưa nhập lại mật khẩu");
+                    // return false;
+                }
 
-            else if (pw != repeatpw) {
-                alert("Mật khẩu chưa khớp")
-            }
+                else if (pw != repeatpw) {
+                    alert("Mật khẩu chưa khớp")
+                }
 
-            else if (year == 0) {
-                alert("Chưa chọn năm");
-                // return false;
-            }
+                else if (year == 0) {
+                    alert("Chưa chọn năm");
+                    // return false;
+                }
 
-            else if (city == 0) {
-                alert("Chưa chọn thành phố");
-                // return false;
-            }
-            else {
-                alert("Chúc mừng bạn đã đăng ký thành công");
-            }
+                else if (city == 0) {
+                    alert("Chưa chọn thành phố");
+                    // return false;
+                }
+                else {
+                    alert("Chúc mừng bạn đã đăng ký thành công");
+                }
             
         }
         register.addEventListener("click", onButtonClick)

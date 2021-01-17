@@ -1,11 +1,15 @@
+//Khai Bien
 var No1;
 var No2;
 
+//Nhan gia tri tu input
 function getValue() {
     //obtain user input
     No1 = parseFloat(document.getElementById("No1").value);
     No2 = parseFloat(document.getElementById("No2").value);
 }
+
+//Phep Tinh Cong
 function addFunction() {
     
     getValue();
@@ -18,6 +22,8 @@ function addFunction() {
         console.log(total);
     }
 };
+
+//Phep tinh tru
 function minFunction() {
     getValue();
     //calculation
@@ -30,6 +36,7 @@ function minFunction() {
     }
 };
 
+//Phep Tinh Nhan
 function mulFunction() {
     getValue();
     //calculation
@@ -41,6 +48,7 @@ function mulFunction() {
     }
 };
 
+//Phep Tinh Chia
 function divFunction() {
     getValue();
     //calculation
@@ -52,6 +60,7 @@ function divFunction() {
     }
 };
 
+//Phep tinh lay so du
 function devideFunction() {
     getValue();
     var bal = No1%No2;

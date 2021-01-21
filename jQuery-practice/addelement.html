@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>use jQuery to play w array</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div class="test"></div>
+    <div class="slideshow"></div>
+    <script>
+        var images = ["img1", "img2", "img3", "img4"]; //create a variable images have 4 items or objects
+        console.log(images[2])
+
+        $.each(images, function(index, value) {
+            console.log(index+"  "+value);
+            $(".test").append("<p>" + value +"</p>")//values of variable images are shown in paragraphs aka append the elements to the div or html
+        })
+
+        //Create an array of object, and each object has two properties
+        var slide = [
+            {img: "image1",
+            bttn: "button1"},
+            {img: "image2",
+            bttn: "button2"},
+            {img: "image3",
+            bttn: "button3"},
+            {img: "image4",
+            bttn: "button4"}
+        ]
+        $.each(slide, function(index, value) {
+            $(".slideshow").append("<p>" + value.bttn + "</p>")
+        })
+    </script>
+</body>
+</html>

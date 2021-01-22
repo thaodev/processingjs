@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .button {
+            border-radius: 50%;
+            background-color: blue;
+        }
+
+        .image-area {
+            display: none;
+        }
+
+        .active,
+        .button:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-area">
+        <img src="https://www.kasandbox.org/programming-images/food/mushroom.png" alt="">
+    </div>
+    <div class="image-area">
+        <img src="https://www.kasandbox.org/programming-images/food/tomatoes.png" alt="">
+    </div>
+    <div class="image-area">
+        <img src="https://www.kasandbox.org/programming-images/food/chocolates.png" alt="">
+    </div>
+    <div class="image-area">
+        <img src="https://www.kasandbox.org/programming-images/food/strawberries.png" alt="">
+    </div>
+
+    <div>
+        <button id="Prev">Prev</button>
+        <button class="button" id=" button1">1</button>
+        <button class="button" id="button2">2</button>
+        <button class="button" id="button3">3</button>
+        <button class="button" id="button4">4</button>
+        <button id="Next">Next</button>
+    </div>
+    <script>
+        var slide = 0;
+
+        function showSlides() {
+            $(".image-area").hide();
+            $(".image-area:eq(" + slide + ")").show();
+        }
+        showSlides();
+
+        var buttons = ["button1", "button2", "button3", "button4"];
+            $(".button").on("click", function () {
+
+
+                $(".button").removeClass("active");
+                $(this).addClass("active");
+
+                $.each(buttons, function (index, value) {
+                    slide = value;
+                    value ++;
+                })
+                
+                showSlides(); 
+                
+            
+               
+            })
+
+        $("#Next").on("click", function () {
+            if (slide == $(".image-area").length - 1) {
+                slide = 0;
+            } else {
+                slide++;
+            }
+            showSlides();
+            // alert("you clicked me")
+        })
+
+        $("#Prev").on("click", function () {
+            if (slide == 0) {
+                slide = $(".image-area").length - 1;
+            } else {
+                slide--;
+            }
+            showSlides();
+            // alert("you clicked me")
+        })
+
+
+
+        // for (var i = 0; i < $(".button").length; i ++ ) {
+        //     $(".button").on("click", function() {
+        //         $(".image-area")[slide].show()
+
+        // })
+
+
+            // $("button").click(function(){
+
+            //     var buttons = ["button1", "button2", "button3", "button4"];
+            //     for (var i = 0; i < buttons.length; i++)
+            //     alert( buttons[i] + " is pressed")
+            //     // $("img").attr("src",images[slide]);
+            //     // slide++;
+            // });
+
+        // for (var i = 0; i < 4; i++) {
+        //     $(".button").eq(i).on("click", { value: i }, function (event) {
+        //         $("img").attr("src",images[slide])
+        //         slide++;
+
+        //     })
+        // }
+    </script>
+
+</body>
+
+</html>

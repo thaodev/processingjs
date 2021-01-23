@@ -65,10 +65,10 @@
                 $(".button").removeClass("active");
                 $(this).addClass("active");
 
-                $.each(buttons, function (index, value) {
-                    slide = value;
-                    value ++;
-                })
+               for (var i = 0; i < buttons.length; i++) {
+                   buttons[i].style.backgroundColor ="blue";
+               }
+
                 
                 showSlides(); 
                 
@@ -82,6 +82,9 @@
             } else {
                 slide++;
             }
+            for (var i = 0; i < buttons.length; i++) {
+                   buttons[i].style.backgroundColor ="blue";
+               }
             showSlides();
             // alert("you clicked me")
         })
@@ -92,6 +95,9 @@
             } else {
                 slide--;
             }
+            for (var i = 0; i < buttons.length; i++) {
+                   buttons[i].style.backgroundColor ="blue";
+               }
             showSlides();
             // alert("you clicked me")
         })

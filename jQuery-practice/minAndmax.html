@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <p>Enter 1st number <input id="one" type="number" value ="12"></p>
-    <p>Enter 2nd number <input id="two" type="number" value= "25"></p>
-    <p>Enter 3rd number <input id="three" type="number" value= "90"></p>
+    <p>Enter 1st number <input id="one" type="number" value="12"></p>
+    <p>Enter 2nd number <input id="two" type="number" value="25"></p>
+    <p>Enter 3rd number <input id="three" type="number" value="90"></p>
     <button id="max">Find max</button>
-    <p>result <input class="result" type="number"></p>
+    <p >result <input class="result" type="text"></p>
+     <!-- How to have result in a box using input -->
+    <!-- <p class="result">Result is </p> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-    var one = $("#one")
-    var two = $("#two")
-    var three = $("#three")
-    var result = $(".result")
-   
-    $("#max").on("click", function() {
-        var arr = [one, two, three]
-         var max = arr[0] //How to know when to put variable outside or inside of function??
-        for (var i = 0; i < arr.length; i++ ) {
-            if (arr[i] > max) {
-                max = arr[i];
+
+
+        $("#max").on("click", function () {
+            var one = $("#one").val();
+            var two = $("#two").val();
+            var three = $("#three").val();
+            var arr = [one, two, three];
+            var max = arr[0]; //How to know when to put variable outside or inside of function??
+
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                    
+                }
+                console.log(max)
+                
+                // alert("this function does work")
             }
-        }
-        result = max;
-    })
+            $(".result").text("Result is " + max);
+
+        });
+
     //     var arr = [45, 23, 46, 90, 30, 50, 31, 139, 345, 23, 29]
 
     //     var max = arr[0];
@@ -52,4 +63,5 @@
     //     console.log(diff)
     // </script>
 </body>
+
 </html>

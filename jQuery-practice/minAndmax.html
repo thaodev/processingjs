@@ -13,8 +13,10 @@
     <p>Enter 3rd number <input id="three" type="number" value="90"></p>
     <button id="max">Find max</button>
     <p >result <input class="result" type="text"></p>
+    <p class="mess1">Your result is suck</p>
+    <p class="mess2">Your result is suck</p>
      <!-- How to have result in a box using input -->
-    <!-- <p class="result">Result is </p> -->
+    <p class="result">Result is </p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
@@ -37,6 +39,8 @@
                 // alert("this function does work")
             }
             $(".result").text("Result is " + max);
+            $(".mess1").text("Hello <strong>Thao</strong>")
+            $(".mess2").html("Hello <strong>Thao</strong>");
 
         });
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        var arr = "47393";
+        function arraysum(params) {
+            var total = 0;
+            for (let i = 0; i < params.length; i++) {
+                const element = Number(params[i]);
+                total += element;
+            }
+            return total;
+        }
+        console.log(arraysum(arr));
+
+        function sum(param1, param2) {
+            let result = Number(param1) + Number(param2);
+            return result
+
+        }
+        console.log(sum(2, 1));
+        console.log(sum(sum(1, 2), sum(3, "4")));
+
+        function search(params1, params2) {
+            for (let i = 0; i < params1.length; i++) {
+                const element = params1[i];
+                if (element === params2) {
+                    console.log("exist");
+                    return;
+                }
+            }
+
+        }
+        search("abc","d")
+    </script>
+</body>
+
+</html>

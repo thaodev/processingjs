@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .button {
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .active,
+        .button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://www.kasandbox.org/programming-images/food/chocolates.png" alt="" class="image">
+        <div class="button-area">
+            <button class="prev">prev</button>
+            <button class="button" id="button1">1</button>
+            <button class="button" id="button2">2</button>
+            <button class="button" id="button3">3</button>
+            <button class="button" id="button4">4</button>
+            <button class="next">next</button>
+        </div>
+    </div>
+    <script>
+        var images = [
+            "https://www.kasandbox.org/programming-images/food/chocolates.png",
+            "https://www.kasandbox.org/programming-images/food/mushroom.png",
+            "https://www.kasandbox.org/programming-images/food/strawberries.png",
+            "https://www.kasandbox.org/programming-images/food/tomatoes.png",
+            ];
+        var slide = 0;
+        $("#button1").on("click", function() {
+            $(".image").attr("src", images[slide]);
+            $(".button").css("background-color", "gray");
+            $("#button1").css("background-color","blue");
+
+        })
+
+        $("#button2").on("click", function() {
+            $(".image").attr("src", images[slide+1]);
+            $(".button").css("background-color", "gray");
+            $("#button2").css("background-color","blue");
+        })
+
+        $("#button3").on("click", function() {
+            $(".image").attr("src", images[slide+2]);
+            $(".button").css("background-color", "gray");
+            $("#button3").css("background-color","blue");
+        })
+
+        $("#button4").on("click", function() {
+            $(".image").attr("src", images[slide+3]);
+            $(".button").css("background-color", "gray");
+            $("#button4").css("background-color","blue");
+        })
+        
+        $(".prev").on("click", function() {
+            for (var i = 0; i < images.length; i++) {
+                if (i <= images.length-1) {
+                    $(".image").attr("src", images[slide])
+                }
+            }
+        })
+
+        
+    </script>
+
+</body>
+
+</html>

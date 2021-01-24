@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <p>what is your string? <input type="text" id="input"></p>
+    <button>Reverse</button>
+    <!-- <p>Reverse of your string is <input type="text" class="output"></p> -->
+    <p class="output"></p>
+    <script>
+        
+        $("#input").on("click", function() {
+            let str = $(this).val();
+            let reverse_str = str.split("").reverse().join(""); 
+            console.log(reverse_str);
+            $(".output").text(reverse_str);          
+        });            
+       
+        
+    </script>
+</body>
+</html>

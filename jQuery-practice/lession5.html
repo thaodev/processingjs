@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <p>Enter base <input class = "input1" value = 2></p>
+    <p>Enter exponent <input class = "input2" value = 2></p>
+    <button class="calc">Calculate</button>
+    <p class="result"></p>
+
+    <script>
+        $(".calc").on("click", function() {
+            let base = Number($(".input1").val());
+            let exp = Number($(".input2").val());
+            let num = Math.pow(base, exp);
+            console.log(num);
+            $(".result").text(num);
+        })
+    </script>
+</body>
+</html>

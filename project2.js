@@ -61,7 +61,7 @@ function divFunction() {
 };
 
 //Phep tinh lay so du
-function devideFunction() {
+function remainderFunction() {
     getValue();
     var bal = No1%No2;
     debugger;

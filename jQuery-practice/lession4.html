@@ -12,17 +12,12 @@
 
     <script>
     var array = [3,2,5,7,-1,8,3,5,6,1,0,9,-3]
-    var newArr = $.grep(array, function(item, i) {
-        return (i > 1 && i < 7);
-    });
-    var total = 0;
-    newArr.forEach(element => {
-        total += element;
-        return total;
-    });
-    console.log(newArr);
+    var total = 0
+        for (let i = 2; i < 7; i++) {
+            total += array[i];           
+        };
     console.log(total);
-    $(".result").html("New array: [" + newArr + "]"+ "<br/> Total of its elements is "+ total);
+    $(".result").html(total);
 
 </script>
     

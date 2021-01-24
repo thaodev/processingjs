@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <p>1st input <input type="number" class="inputs" id="input1" value=3></p>
+    <p>2nd input <input type="text" class="inputs" id="input2" value=4></p>
+    <button class="result">calc area</button>
+    <p class="calc"></p>
+
+    <p>radius <input type="text" class="input input3" placeholder="inch"></p>
+    <button class="circle">calculation</button>
+    <p class="calculation"></p>
+    <script>
+        $(".result").on("click", function () {
+            var num1 = $("#input1").val();
+            var num2 = $("#input2").val();
+            var mult = parseInt(num1) * parseInt(num2);
+            var circum = (Number(num1) + Number(num2))/2
+            $(".calc").text("Area of your rect is " + mult + " and Circumference of your rect is " + circum);
+            console.log(mult + " And " + circum);
+            $(".inputs").css("backgroundColor", "green");
+
+        
+        })
+        
+        $(".circle").on("click", function() {
+            var num3 = Number($(".input3").val());
+            var cir = 2*3.14*num3;
+            var area = 3.14*num3*num3;
+            $(".calculation").text("Area of your circle is " + area +" And circumference of your circle is " + cir)
+            console.log(area + " And " + cir);
+            $(".input").css("backgroundColor", "pink");
+        })
+
+
+
+    </script>
+</body>
+
+</html>

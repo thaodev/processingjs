@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <p> side 1 <input id="side1" value = 1></p>
+    <p> side 2 <input id="side2" value = 2></p>
+    <p> side 3 <input id="side3" value = 3></p>
+    <button id="calc">calculation</button>
+    <p class="result"></p>
+    <script>
+        $("#calc").on("click", function() {
+            var num1 = $("#side1").val();
+            var num2 = $("#side2").val();
+            var num3 = $("#side3").val();
+            if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+                var circum = Number(num1) + Number(num2) + Number(num3); 
+                $(".result").text("Circumference of your circle is " + circum)                
+            } else $(".result").text("Khong la ba canh cua mot tam giac")
+            $("#side1").css("backgroundColor", "orange");
+            $("#side2").css("backgroundColor", "purple");
+            $("#side3").css("backgroundColor", "yellow");
+            console.log(circum);
+        })
+        
+    </script>
+
+</body>
+</html>

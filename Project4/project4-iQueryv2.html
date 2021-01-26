@@ -16,13 +16,12 @@
             background-color:#03e8fc;
         }
 
-        .image-area {
-            display: none;
+        button .color {
+            background-color: gray;
         }
 
-        .active,
-        .button:hover {
-            background-color: gray;
+        .image-area {
+            display: none;
         }
     </style>
 </head>
@@ -49,58 +48,7 @@
         <button class="button" onClick="changeSlide(4)">4</button>
         <button id="Next">Next</button>
     </div>
-    <script>
-        var slide = 0;
-
-        function showSlides() {
-            $(".image-area").hide();
-            $(".image-area:eq(" + slide + ")").show();
-        }
-        showSlides();
-
-        //For buttons 1, 2, 3, and 4
-        function changeSlide(index) {
-            slide = index - 1;
-            for (let i = 0; i < $(".button").length; i++) {
-                $(".button:eq(" + i + ")").css("background-color", "#03e8fc");
-            }
-            $(".button:eq(" + slide + ")").css("background-color", "gray");
-            showSlides();
-        }
-
-        //For button Next
-        $("#Next").on("click", function () {
-            if (slide == $(".image-area").length - 1) {
-                slide = 0;
-            } else {
-                slide++;
-            }
-            for (let i = 0; i < $(".button").length; i++) {
-                $(".button:eq(" + i + ")").css("background-color", "#03e8fc");
-            }
-            $(".button:eq(" + slide + ")").css("background-color", "gray");
-            showSlides();
-        })
-
-        //For button Previous
-        $("#Prev").on("click", function () {
-            if (slide == 0) {
-                slide = $(".image-area").length - 1;
-            } else {
-                slide--;
-            }
-            for (let i = 0; i < $(".button").length; i++) {
-                $(".button:eq(" + i + ")").css("background-color", "#03e8fc");
-            }
-            $(".button:eq(" + slide + ")").css("background-color", "gray");
-            showSlides();
-        })
-
-
-
-      
-    </script>
-
+    <script src="project4.js"></script>
 </body>
 
 </html>

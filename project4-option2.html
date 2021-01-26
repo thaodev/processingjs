@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow using JS</title>
+    <style>
+        .image {
+            text-align: center;
+        }
+
+        .button {
+            text-align: center;
+            border: none;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .button1,
+        .button2,
+        .button3,
+        .button4 {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- image area -->
+    <div class="image">
+        <img id="img-area" src="https://www.kasandbox.org/programming-images/food/mushroom.png" alt="">
+    </div>
+    <!-- button area -->
+    <div class="button">
+        <button type="button" onClick="prev()">Previous</button>
+        <button style="background-color: blue" class="button1 number" onClick="one()" active>1</button>
+        <button style="background-color: blue" class="button2 number" onClick="two()">2</button>
+        <button style="background-color: blue" class="button3 number" onClick="three()">3</button>
+        <button style="background-color: blue"  class="button4 number" onClick="four()">4</button>
+        <button type="button" onClick="next()">Next</button>
+    </div>
+
+    <script>
+        // For next and previous buttons
+        var images = ["https://www.kasandbox.org/programming-images/food/mushroom.png",
+            "https://www.kasandbox.org/programming-images/food/tomatoes.png",
+            "https://www.kasandbox.org/programming-images/food/strawberries.png",
+            "https://www.kasandbox.org/programming-images/food/chocolates.png",];
+        var buttons = ["button1", "button2", "button3", "button4"]
+
+        var slide = 0;
+        function next() {
+            if (slide != (images.length - 1)) {
+                img.src = images[slide + 1];
+                var abc = buttons[slide + 1];
+
+                var btnNumber = document.getElementsByClassName("number");
+                for (var i = 0; i < btnNumber.length; i++) {
+                    btnNumber[i].style.backgroundColor = "blue";
+                }
+                document.getElementsByClassName(abc)[0].style.backgroundColor = "#FFFFFF";
+                slide++;
+            }
+        }
+       
+        function prev() {
+            if (slide != 0) {
+                img.src = images[slide - 1];
+                var abc = buttons[slide - 1];
+                var btnNumber = document.getElementsByClassName("number");
+                for (var i = 0; i < btnNumber.length; i++) {
+                    btnNumber[i].style.backgroundColor = "blue";
+                }
+                document.getElementsByClassName(abc)[0].style.backgroundColor = "#FFFFFF";
+               
+                slide--;
+                // alert("work");
+            }
+        }
+        // For number buttons
+        var img = document.getElementById("img-area");
+        function one() {
+            document.getElementsByClassName("button1")[0].style.backgroundColor = "#FFFFFF";
+            document.getElementsByClassName("button2")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button3")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button4")[0].style.backgroundColor = "blue";
+
+            img.src = "https://www.kasandbox.org/programming-images/food/mushroom.png";
+            // alert("work");
+            slide = 0;
+        }
+        function two() {
+            document.getElementsByClassName("button2")[0].style.backgroundColor = "#FFFFFF";
+            document.getElementsByClassName("button1")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button3")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button4")[0].style.backgroundColor = "blue";
+            img.src = "https://www.kasandbox.org/programming-images/food/tomatoes.png";
+            // alert("work");
+            slide = 1;
+        }
+        function three() {
+            document.getElementsByClassName("button3")[0].style.backgroundColor = "#FFFFFF";
+            document.getElementsByClassName("button4")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button1")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button2")[0].style.backgroundColor = "blue";
+
+            img.src = "https://www.kasandbox.org/programming-images/food/strawberries.png";
+            // alert("work");
+            slide = 22;
+        }
+        function four() {
+            document.getElementsByClassName("button4")[0].style.backgroundColor = "#FFFFFF";
+            document.getElementsByClassName("button1")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button2")[0].style.backgroundColor = "blue";
+            document.getElementsByClassName("button3")[0].style.backgroundColor = "blue";
+
+            img.src = "https://www.kasandbox.org/programming-images/food/chocolates.png";
+            // alert("work");
+            slide = 33;
+        }
+    </script>
+</body>
+
+</html>

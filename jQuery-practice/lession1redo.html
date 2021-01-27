@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>a rectangular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>Length of one side <input type="text" class="side1"></p>
+    <p>Length of second side <input type="text" class="side2"></p>
+    <button class="area">area calculation</button>
+    <p>the area of your rect is <input type="text" class="output1"></p>
+    <button class="cir">cir calculation</button>
+    <p>The circumference of your rect is <input type="text" class="output2"></p>
+    <script>
+        var side1 = Number($(".side1").val());
+        var side2 = Number($(".side2").val());
+        
+        $(".area").click(function () {
+            var side1 = Number($(".side1").val());
+            var side2 = Number($(".side2").val());
+            let area = side1 * side2;
+            console.log(area);
+            $(".output1").val(area)
+
+        })
+
+        $(".cir").click(function () {
+            // let side1 = Number($(".side1").val());
+            // let side2 = Number($(".side2").val());
+            let cir = (side1 + side2) * 2;
+            console.log(cir);
+            $(".output2").val(cir)
+        })
+    </script>
+
+
+</body>
+
+</html>

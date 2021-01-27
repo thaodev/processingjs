@@ -9,16 +9,16 @@
 </head>
 <body>
     <p>what is your string? <input type="text" id="input"></p>
-    <button>Reverse</button>
+    <button id="result">Reverse</button>
     <!-- <p>Reverse of your string is <input type="text" class="output"></p> -->
-    <p class="output"></p>
+    <p><input class="output" type="text"></p>
     <script>
         
-        $("#input").on("click", function() {
-            let str = $(this).val();
+        $("#result").on("click", function() {
+            let str = $("#input").val();
             let reverse_str = str.split("").reverse().join(""); 
             console.log(reverse_str);
-            $(".output").text(reverse_str);          
+            $(".output").val(reverse_str);          
         });            
        
         

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <p>Fill out base number <input type="text" class="input1"></p>
+    <p>Fill out exp number <input type="text" class="input2"></p>
+    <button class="calc">Calc exponential</button>
+    <p>Output <input type="text" class="output"></p>
+    
+    <script>
+        // Method1
+       $(".calc").on("click", function() {
+           let No1 = Number($(".input1").val());
+           let No2 = Number($(".input2").val());
+            console.log(math(No1,No2));
+            $(".output").val(math(No1,No2))
+       })
+
+       function math(base, exp) {
+           let result = 1;
+           for (let i = 0; i < exp; i++) {
+                result = result*base;        
+           }
+           return result
+       }
+
+    //    MEthod2
+    // $(".calc").click(function() {
+    //         let base = Number($(".input1").val());
+    //         let exp = Number($(".input2").val());
+    //         let result = 1;
+    //     for (let i = 0; i < exp; i++) {
+    //              result = result*base;            
+    //         }
+    //     // return result
+    //     $(".output").val(result)
+    //     console.log(result);
+    //     })
+    </script>
+</body>
+</html>

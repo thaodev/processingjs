@@ -10,18 +10,33 @@
 <body>
     <p>what is your string? <input type="text" id="input"></p>
     <button id="result">Reverse</button>
+    <button id="rel">b</button>
     <!-- <p>Reverse of your string is <input type="text" class="output"></p> -->
     <p><input class="output" type="text"></p>
     <script>
-        
+        let x = 0;
         $("#result").on("click", function() {
             let str = $("#input").val();
-            let reverse_str = str.split("").reverse().join(""); 
-            console.log(reverse_str);
-            $(".output").val(reverse_str);          
+            // let reverse_str = str.split("").reverse().join(""); 
+            console.log(str);
+            $(".output").val(reverseString(str));  
+            console.log(reverseString(str));  
+            // $("#input").css("background","pink");
+            // document.getElementById("input").style="background-color:pink";
+            // document.getElementById("input").style= "color:purple";
+            document.getElementById("input").type = "text";
+            document.getElementById("input").style.backgroundColor = "red";
+            document.getElementById("input").style.color = "white";
+            console.log(x);
         });            
-       
-        
+      
+        function reverseString(string1) {
+            // let string1
+            let string2 = string1.split("").reverse().join("");
+            return string2; 
+        }
+
+
     </script>
 </body>
 </html>

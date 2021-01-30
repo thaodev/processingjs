@@ -17,11 +17,12 @@
     <p>The circumference of your rect is <input type="text" class="output2"></p>
     <script>
         var side1 = Number($(".side1").val());
-        var side2 = Number($(".side2").val());
+        console.log(side1);
+        let side2 = Number($(".side2").val());
         
         $(".area").click(function () {
-            var side1 = Number($(".side1").val());
-            var side2 = Number($(".side2").val());
+            // side1 = Number($(".side1").val());
+            // side2 = Number($(".side2").val());
             let area = side1 * side2;
             console.log(area);
             $(".output1").val(area)

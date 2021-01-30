@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="images">
+        <img src="mushroom.png" class="img" alt="">
+    </div>
+    <!-- <div class="images">
+        <img src="mushroom.png" class="img1" alt="">
+    </div> -->
+    <button id="slide">slide</button>
+    <script>
+        document.getElementById("slide").onclick = function() {
+            // alert("you clicked")
+        document.getElementsByClassName("img")[0].setAttribute("src","tomatoes.png")
+        }
+
+    </script>
+
+    
+
+
+</body>
+
+</html>

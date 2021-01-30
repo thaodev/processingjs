@@ -119,11 +119,13 @@
             }
 
             for (i = 0; i < buttons.length; i++) {
-                buttons[i].className = buttons[i].className.replace(" active", "");
+                // buttons[i].className = buttons[i].className.replace(" active", "");
+                buttons[i].classList.remove("active")
             }
 
             slides[slideIndex - 1].style.display = "block";
-            buttons[slideIndex - 1].className += " active";
+            // buttons[slideIndex - 1].className += " active";
+            buttons[slideIndex - 1].classList.add("active")
         }
 
     </script>

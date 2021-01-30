@@ -1,9 +1,9 @@
-$("button").hover(function () {
-    $(this).addClass("color");
-},
-    function () {
-        $(this).removeClass("color");
-    });
+// $("button").hover(function () {
+//     $(this).addClass("color");
+// },
+//     function () {
+//         $(this).removeClass("color");
+//     });
 
 
 

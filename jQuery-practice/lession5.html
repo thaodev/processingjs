@@ -17,14 +17,20 @@
         $(".calc").on("click", function() {
             let base = Number($(".input1").val());
             let exp = Number($(".input2").val());
+            // math(base,exp);
+            
+            $(".result").text(math(base,exp));
+        })
+
+        function math(base, exp) {
+            
             let result = 1;
             for (let i = 0; i < exp; i++) {
                 result *= base;              
             }
-            // let num = Math.pow(base, exp);
-            console.log(result);
-            $(".result").text(result);
-        })
+            return result;
+        }
+
     </script>
 </body>
 </html>

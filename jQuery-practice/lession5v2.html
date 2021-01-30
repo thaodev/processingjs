@@ -11,7 +11,10 @@
     <p>Fill out base number <input type="text" class="input1"></p>
     <p>Fill out exp number <input type="text" class="input2"></p>
     <button class="calc">Calc exponential</button>
-    <p>Output <input type="text" class="output"></p>
+    <p>Output 
+    <input type="text" class="output1"> <br></br>
+
+    <input type="text" class="output2"></p>
     
     <script>
         // Method1
@@ -19,7 +22,8 @@
            let No1 = Number($(".input1").val());
            let No2 = Number($(".input2").val());
             console.log(math(No1,No2));
-            $(".output").val(math(No1,No2))
+            $(".output1").val(math(No1,No2));
+            $(".output2").val(multi(No1,No2));
        })
 
        function math(base, exp) {
@@ -30,6 +34,10 @@
            return result
        }
 
+       function multi(Num1, Num2) {
+           let multiple = Num1 * Num2;
+           return multiple;
+       }
     //    MEthod2
     // $(".calc").click(function() {
     //         let base = Number($(".input1").val());

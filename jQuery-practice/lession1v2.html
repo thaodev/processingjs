@@ -42,6 +42,17 @@
             let mult = num1 * num2;
             return mult;
         }
+
+        $(".circum").on("click", function() {
+            let side1 = Number($(".side1").val());
+            let side2 = Number($(".side2").val());
+            let circumNo = (side1+side2)*2;
+            $(".result2").val(circumNo);
+            console.log(circumNo);
+            $(".result2").css("color","purple");
+            $(".result2").css("background-color","green");
+            $(".side2").css({"background-color": "yellow"},{"font-size": "200%"});
+        })
     </script>
 
 

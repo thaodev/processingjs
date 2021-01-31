@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>side1 <input type="text" class="side1" placeholder="inch" value=2></p>
+    <p>side2 <input type="text" class="side2" placeholder="inch" value=2></p>
+    <button id="area">area calc</button>
+    <p>Result <input type="text" class="result1"></p>
+    <button class="circum">Circumference</button>
+    <p>Result <input type="text" class="result2"></p>
+
+    <script>
+        document.getElementById("area").addEventListener("click", function() {
+            // let side1 = Number($(".side1").val());
+            // let side2 = Number($(".side2").val());
+            let side1 = Number(document.getElementsByClassName("side1")[0].value);
+            let side2 = Number(document.getElementsByClassName("side2")[0].value);
+            // $(".result1").val(areaCalc(side1, side2));
+            document.getElementsByClassName("result1")[0].value = areaCalc(side1, side2);
+            console.log(areaCalc(side1, side2));
+
+            // document.getElementsByClassName("result1")[0].style = "color: pink";
+            // document.getElementsByClassName("result1")[0].style = "background-color: red";only the second command line works
+
+            document.getElementsByClassName("result1")[0].style.color = "white";
+            document.getElementsByClassName("result1")[0].style.backgroundColor = "pink";//Both command line works at the same time
+
+            document.getElementsByClassName("side1")[0].setAttribute("style", "background-color:red");
+            document.getElementsByClassName("side1")[0].setAttribute("style", "color:purple");//only the second command line works
+
+
+            // alert("you clicked");
+
+        });
+
+        function areaCalc(num1, num2) {
+            let mult = num1 * num2;
+            return mult;
+        }
+    </script>
+
+
+</body>
+</html>

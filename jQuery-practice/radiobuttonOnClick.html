@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <label>Gender</label>
+    <input type="radio" id="gender1" name="gender" >Male
+    <input type="radio" id="gender2" name="gender" >Female
+    <button onClick="check()">Click Me</button>
+    <p>your destine <input type="text" class="output"></p>
+    <script>
+        function check() {
+            if ($("#gender1").is(":checked")) {
+                $(".output").val("So you are a male ha?")
+                $(".output").css("color", "blue")
+            }
+            else if ($("#gender2").is(":checked")) {
+                $(".output").val("yay you are a female")
+                $(".output").css("background-color", "pink")
+            }
+            else $(".output").val("you didn't click")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <label for="city">Thành phố <span class="star">*</span></label>
+    <select id="city" required>
+        <option value="0">-chọn-</option>
+        <option value="1">Hà Nội</option>
+        <option value="2">Hồ Chí Minh</option>
+        <option value="3">Hải Phòng</option>
+        <option value="4">Đà Nẵng</option>
+        <option value="5">Cần Thơ</option>
+        <option value="6">Quảng Ninh</option>
+        <option value="7">Other</option>
+    </select>
+    <button class="selection">Click me</button>
+    <p><input type="text" class="output"></p>
+    <script>
+        
+        document.getElementsByClassName("selection")[0].addEventListener("click", function() {
+            var country = [
+            {place: "Hanoi", number: 1},
+            {place: "HCM", number: 2},
+            {place: "HaiPhong", number: 3},
+            {place: "DaNang", number: 4},
+            {place: "CanTho", number: 5},
+            {place: "QuangNinh", number: 6},
+            {place: "Other", number: 7}];
+            var c = document.getElementById("city");
+            var city = c.options[c.selectedIndex].value;
+            for (let i = 0; i <= country.length; i++) {
+                if (country[i].number == city) {
+                    document.getElementsByClassName("output")[0].value = "Your chosen place is " + country[i].place;
+                    console.log(country[i].place);
+                } else {document.getElementsByClassName("output")[0].value = "you haven't clicked"}
+            }
+            
+        })
+        //     var country = ["Hanoi", "HCM", "HaiPhong", "DaNang", "CanTho", "QuangNinh","Other"]
+        // document.getElementsByClassName("selection")[0].addEventListener("click", function() {
+        //     var c = document.getElementById("city");
+        //     var city = c.options[c.selectedIndex].value;
+            //  if (city == 1)    {
+            //     document.getElementsByClassName("output")[0].value = country[0]; 
+            //  }
+            //  else if (city == 2) {
+            //      document.getElementsByClassName("output")[0].value = country[1];
+            //  }
+            //  else {
+            //      document.getElementsByClassName("output")[0].value = "Gotta try something"
+            //  }
+            // })
+      
+
+    </script>
+</body>
+
+</html>

@@ -15,32 +15,30 @@
     <p>your destine <input type="text" class="output"></p>
     <script>
 
-        $("#code").click(function() {
-            if($("#gender1").is(":checked")) {
-                $(".output").val("You are male");
-            } else if ($("#gender2").is(":checked")) {
-                $(".output").val("You are female");
-            } else ( $(".output").val("You didn't click"));
-        })
+        // $("#code").click(function() {
+        //     if($("#gender1").is(":checked")) {
+        //         $(".output").val("You are male");
+        //     } else if ($("#gender2").is(":checked")) {
+        //         $(".output").val("You are female");
+        //     } else ( $(".output").val("You didn't click"));
+        // })
         
-    //     document.getElementById("code").addEventListener("click", function() {
-    //         var genders = document.getElementsByClassName("gender");
-            
-    //     for (let i = 0; i < genders.length; i++) {
-    //         if (genders[i].value === "Male") {
-    //             document.getElementsByClassName("output").value = "you are " + genders[i].value;
-    //             // alert("you checked")
-    //             console.log(genders);
-    //         } 
-    //         else if (genders[i].value === "Female") {
-    //             document.getElementsByClassName("output").value = "you are" + genders[i].value;
-    //         }
+    document.getElementById("code").addEventListener("click", function() {            
+            if (document.getElementById("gender1").checked) {
+                document.getElementsByClassName("output")[0].value = "you are Male";
+                // alert("you checked")
+                console.log(document.getElementById("gender1"));
+            } 
+            else if (document.getElementById("gender2").checked) {
+                document.getElementsByClassName("output")[0].value = "you are female";
+                console.log(document.getElementById("gender2"));
+            }
 
-    //         else { 
-    //             // alert("you haven't checked a gender")
-    //             document.getElementsByClassName("output").value = "you haven't click any option"
-    //         }
-            
+            else { 
+                // alert("you haven't checked a gender")
+                document.getElementsByClassName("output")[0].value = "you haven't click any option"
+            }
+        });
     //     }
 
     // })
